@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Working chat apps</title>
+        <style>
+            .msg{
+                background-color: aqua;
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+            .self{
+                background-color: rgb(0, 153, 255);
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="msgcontainer" style="height:500px;background:#eee;overflow-y: auto;"></div>
+        <div style="overflow: hidden;">
+            <input id="ipt" style="width: 100%; padding: 10px;" onkeypress="mysocket.keypress(event)" type="text"/>
+        </div>
+
+        <script src="mysocket.js"></script>
+        <script>
+            var mysocket = new MySocket()
+            mysocket.connectSocket();
+        </script>
+    </body>
+</html>
